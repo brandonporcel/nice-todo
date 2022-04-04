@@ -1,15 +1,15 @@
 import React from 'react';
 
-export default function AddSvg({ color = 'initial' }) {
+export default function AddSvg({ color = 'initial', setAddTaskToggle }) {
 	return (
 		<svg
+			onClick={setAddTaskToggle}
 			width="32"
 			height="32"
 			strokeWidth="1.5"
 			viewBox="0 0 24 24"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			style={{ color: `${color}` }}
 		>
 			<path
 				d="M8 12H12M16 12H12M12 12V8M12 12V16"

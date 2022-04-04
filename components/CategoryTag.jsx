@@ -14,7 +14,7 @@ export default function CategoryTag({ name, color }) {
 					padding: 5px 10px 0 0;
 					border-radius: 5px;
 					background-color: var(--tag-bg);
-					color: var(--brown);
+
 					font-size: 15px;
 					line-height: 1.5;
 					cursor: pointer;

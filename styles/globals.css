@@ -12,12 +12,14 @@
 	--green: #daf2d6;
 	--pink: #ffcece;
 	--purple: #d2ceff;
-	--tag-bg: #faf9f8;
+
+	--tag-bg: #f9f9f8;
 }
 body {
 	font-family: 'Assistant', sans-serif;
 	/* noise background image */
-	background-color: #f0f0ffa2;
+	color: var(--brown);
+	background-color: #ffffffa2;
 }
 
 a {

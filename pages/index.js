@@ -12,15 +12,7 @@ export default function Home() {
 					description="lorpem kdfekrek kdfekrek kdfekrek"
 				/>
 				<Task
-					title={'Partido Mundial arg'}
-					description="lorpem kdfekrek kdfekrek kdfekrek"
-				/>
-				<Task
-					title={'Partido Mundial arg'}
-					description="lorpem kdfekrek kdfekrek kdfekrek"
-				/>
-				<Task
-					title={'Partido Mundial arg'}
+					title={'Partidfo Mundial arg'}
 					description="lorpem kdfekrek kdfekrek kdfekrek"
 				/>
 			</div>

@@ -1,8 +1,9 @@
 import React from 'react';
 
-export default function MoreSvg() {
+export default function MoreSvg({ showDetails }) {
 	return (
 		<svg
+			onClick={showDetails}
 			width="24"
 			height="24"
 			strokeWidth="1.5"

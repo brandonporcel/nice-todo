@@ -28,10 +28,7 @@
 	cursor: pointer;
 	color: var(--light-brown);
 }
-.taskWrapper h4,
-.taskWrapper p {
-	color: var(--brown);
-}
+
 .headerCtn {
 	display: flex;
 	justify-content: space-between;
@@ -59,5 +56,4 @@
 }
 .taskCheckCtn > label {
 	font-size: 14px;
-	color: var(--brown);
 }

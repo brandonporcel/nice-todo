@@ -3,11 +3,32 @@
 	padding: 0;
 	margin: 0;
 }
+:root {
+	--brown: #69665c;
+	--light-brown: #b2afa1;
+	--yellow: #fff9de;
+	--white: #fefeef;
+	--light-blue: #d1e5f7;
+	--green: #daf2d6;
+	--pink: #ffcece;
+	--purple: #d2ceff;
+	--tag-bg: #faf9f8;
+}
 body {
 	font-family: 'Assistant', sans-serif;
+	/* noise background image */
+	background-color: #f0f0ffa2;
 }
 
 a {
 	color: inherit;
 	text-decoration: none;
+}
+.container {
+	padding: 5px;
+	display: grid;
+	grid-template-areas:
+		'header'
+		'categories-nav'
+		'main-content';
 }

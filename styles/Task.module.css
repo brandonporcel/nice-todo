@@ -1,0 +1,63 @@
+.taskWrapper {
+	height: 150px;
+	background: var(--yellow);
+	border-radius: 10px;
+	padding: 15px;
+	margin-bottom: 15px;
+}
+.taskDetailsCtn {
+	position: absolute;
+	right: 0;
+	top: 30px;
+	border: 1px solid #e7e7e7;
+	border-radius: 5px;
+	width: 150px;
+	padding: 15px;
+	background-color: var(--white);
+	display: flex;
+	flex-direction: column;
+	height: 90px;
+	justify-content: center;
+}
+.editCtn {
+	border-bottom: 1px solid #e7e7e7;
+}
+.deleteCtn,
+.editCtn {
+	padding: 5px;
+	cursor: pointer;
+	color: var(--light-brown);
+}
+.taskWrapper h4,
+.taskWrapper p {
+	color: var(--brown);
+}
+.headerCtn {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 15px;
+	position: relative;
+}
+.descripCtn {
+	height: 50px;
+	overflow-y: auto;
+}
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.taskTagsCtn {
+	display: flex;
+}
+.taskCheckCtn {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 5px;
+}
+.taskCheckCtn > label {
+	font-size: 14px;
+	color: var(--brown);
+}

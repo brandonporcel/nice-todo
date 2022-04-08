@@ -21,25 +21,39 @@ const categories = [
 		name: 'family',
 	},
 ];
-export default function AddTask({ addTaskToggle, setAddTaskToggle }) {
+export default function AddTask({
+	id,
+	title,
+	description,
+	editTaskToggle,
+	setEditTaskToggle,
+}) {
 	const initialState = {
-		title: '',
-		category: '',
-		description: '',
+		title: title,
+
+		description: description,
 	};
-	const [form, setForm, reset] = useForm(initialState);
+	const [form, setForm] = useForm(initialState);
 	const { tasks, setTasks } = useContext(TaskContext);
-	const Add = () => {
-		setAddTaskToggle();
-		setTasks([...tasks, { ...form, id: Date.now() }]);
-		reset();
+	const editTask = () => {
+		setEditTaskToggle();
+
+		setTasks([
+			{
+				...tasks,
+				...form,
+				id: id,
+				title: form.title,
+				description: form.description,
+			},
+		]);
 	};
 	return (
 		<>
 			<div className="addTaskCtn">
 				<div className="addTaskHeader">
-					<span onClick={setAddTaskToggle}>Cancel</span>
-					<button onClick={Add}>Add</button>
+					<span onClick={setEditTaskToggle}>Cancel</span>
+					<button onClick={editTask}>Edit</button>
 				</div>
 				<div className="form-wrapper">
 					<form>
@@ -88,7 +102,7 @@ export default function AddTask({ addTaskToggle, setAddTaskToggle }) {
 			<style jsx>
 				{`
 					.addTaskCtn {
-						display: ${addTaskToggle === true ? 'block' : 'none'};
+						display: ${editTaskToggle === true ? 'block' : 'none'};
 						height: 100vh;
 						background-color: var(--white);
 						width: 100%;
@@ -97,6 +111,8 @@ export default function AddTask({ addTaskToggle, setAddTaskToggle }) {
 						position: fixed;
 						z-index: 50;
 						overflow: auto;
+						left: 0;
+						top: 0;
 					}
 					.addTaskHeader {
 						display: flex;

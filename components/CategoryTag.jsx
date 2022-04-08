@@ -1,7 +1,7 @@
 import React from 'react';
 
 import TagDot from './TagDot';
-export default function CategoryTag({ name, color }) {
+export default function CategoryTag({ name }) {
 	return (
 		<>
 			<div className="tagCtn">

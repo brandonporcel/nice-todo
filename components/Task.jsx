@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import TaskContext from '../context/TaskContext';
+import useToggle from '../hooks/useToggle';
 import TaskCss from '../styles/Task.module.css';
 import MoreSvg from './MoreSvg';
+import EditTask from './EditTask';
 import TagDot from './TagDot';
-export default function Task({ title, description }) {
+export default function Task({ id, title, description, tag }) {
 	const [detailsShow, setDetailsShow] = useState(false);
+	const [editTaskToggle, setEditTaskToggle] = useToggle(false);
 	const showDetails = () => setDetailsShow((prev) => !prev);
+	const { tasks, setTasks } = useContext(TaskContext);
+	const deleteTask = () => {
+		setTasks(tasks.filter((task) => task.id !== id));
+	};
 	return (
 		<article className={TaskCss.taskWrapper}>
 			<header className={TaskCss.headerCtn}>
@@ -14,9 +22,20 @@ export default function Task({ title, description }) {
 					className={TaskCss.taskDetailsCtn}
 					style={{ display: `${detailsShow === false ? 'none' : 'flex'}` }}
 				>
-					<div className={TaskCss.editCtn}>Edit...</div>
-					<span className={TaskCss.deleteCtn}>Delete</span>
+					<div onClick={setEditTaskToggle} className={TaskCss.editCtn}>
+						Edit...
+					</div>
+					<span onClick={deleteTask} className={TaskCss.deleteCtn}>
+						Delete
+					</span>
 				</div>
+				<EditTask
+					id={id}
+					title={title}
+					description={description}
+					editTaskToggle={editTaskToggle}
+					setEditTaskToggle={setEditTaskToggle}
+				></EditTask>
 			</header>
 			<div className={TaskCss.descripCtn}>
 				<p> {description} </p>

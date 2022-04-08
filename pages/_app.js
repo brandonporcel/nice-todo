@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import '../styles/globals.css';
 import Head from 'next/head';
+import { TaskProvider } from '../context/TaskContext';
 function MyApp({ Component, pageProps }) {
 	return (
 		<>
@@ -15,9 +16,11 @@ function MyApp({ Component, pageProps }) {
 					type="image/x-icon"
 				/>
 			</Head>
-			<Layout>
-				<Component {...pageProps} />
-			</Layout>
+			<TaskProvider>
+				<Layout>
+					<Component {...pageProps} />
+				</Layout>
+			</TaskProvider>
 		</>
 	);
 }
